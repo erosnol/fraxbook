@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
 
-const blogSchema = mongoose.Schema({
+const statusSchema = mongoose.Schema({
     private: {
         type: Boolean,
-        
     },
 
     title: {
@@ -24,7 +23,12 @@ const blogSchema = mongoose.Schema({
     created_by: {
         type: String,
         
+    },
+
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     }
 })
 
-module.exports = mongoose.model('Blog', blogSchema)
+module.exports = mongoose.model('Status', statusSchema)

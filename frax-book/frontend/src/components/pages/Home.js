@@ -10,7 +10,7 @@ const Home = (props) => {
     const history = useHistory()
 
     useEffect(() => {
-        axios.get('http://localhost:4001/status', {
+        axios.get('http://localhost:4002/statuses', {
             headers: {
                 'x-auth-token': localStorage.getItem("userToken")
             }
@@ -21,9 +21,9 @@ const Home = (props) => {
             .catch(err => console.error(err))
     }, [])
 
-    const handleDelete = (blog) => {
+    const handleDelete = (status) => {
         axios
-            .delete(`http://localhost:4001/status/${status._id}`, {
+            .delete(`http://localhost:4002/statuses/${status._id}`, {
                 headers: {
                     "x-auth-token": localStorage.getItem("userToken"),
                 },
@@ -35,7 +35,7 @@ const Home = (props) => {
     }
 
 
-    const handleUpdate = (blog) => {
+    const handleUpdate = (status) => {
         history.push(`/update/${status._id}`)
     }
 
@@ -55,24 +55,24 @@ const Home = (props) => {
                             {status.details}{" "}
 
 
+                            {status.user === props.user._id && (
+                                <span
+                                    className='btn btn-danger'
+                                    style={{ marginRight: '5px' }}
+                                    onClick={() => handleDelete(status)}
+                                >
+                                    X
+                                </span>
 
-                            <span
-                                className='btn btn-danger'
-                                style={{ marginRight: '5px' }}
-                                onClick={() => handleDelete(status)}
-                            >
-                                X
-                            </span>
-
-
-
-                            <span
-                                className='btn btn-info'
-                                onClick={() => handleUpdate(blog)}
-                            >
-                                Update
-                            </span>
-
+                            )}
+                            {status.user === props.user._id && (
+                                <span
+                                    className='btn btn-info'
+                                    onClick={() => handleUpdate(status)}
+                                >
+                                    Update
+                                </span>
+                            )}
                         </h6>
 
                     </div>

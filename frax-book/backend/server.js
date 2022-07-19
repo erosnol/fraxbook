@@ -5,13 +5,13 @@ const helmet = require('helmet')
 const cors = require('cors')
 
 const mongoConfig = require('./config/mongoConfig')
-const blogRouter = require('./routes/blogRouter')
+const statusesRouter = require('./routes/statusesRouter')
 const usersRouter = require('./routes/usersRouter')
 const authRouter = require('./routes/authRouter')
 
 const app = express()
 
-const PORT = process.env.PORT || 4001
+const PORT = process.env.PORT || 4002
 
 //* Middleware
 app.use(express.json())
@@ -20,7 +20,7 @@ app.use(helmet())
 app.use(cors())
 
 //* Routers
-app.use('/blog', blogRouter)
+app.use('/statuses', statusesRouter)
 app.use('/users', usersRouter)
 app.use('/auth', authRouter)
 

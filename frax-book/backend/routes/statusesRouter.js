@@ -1,6 +1,6 @@
 const express = require("express");
 const authMiddleware = require("../middleware/authMiddleware");
-const BlogModel = require('../models/blogSchema')
+const StatusModel = require('../models/statusSchema')
 
 
 //* ======== Create Router ========
@@ -10,8 +10,8 @@ const router = express.Router()
 //* ======== GET =======
 router.get('/', authMiddleware, async (req, res) => {
     try {
-        const blogs = await BlogModel.find()
-        res.status(200).json(blogs)
+        const statuses = await StatusModel.find()
+        res.status(200).json(statuses)
     } catch (error) {
         console.log(error);
     }
@@ -19,15 +19,16 @@ router.get('/', authMiddleware, async (req, res) => {
 
 //* ======= CREATE =======
 router.post('/', authMiddleware, async (req, res) => {
-    const blogData = req.body
-
+    const statusData = req.body
+    statusData.user = req.user.id
+    console.log(statusData);
     try {
-        const blog = await BlogModel.create(blogData) // creates the blog in DB
+        const status = await StatusModel.create(statusData) // creates the status in DB
         //send back the response 
-        res.status(201).json(blog)
+        res.status(201).json(status)
     } catch (error) {
         console.log(error);
-        res.status(400).json('Bad request!')
+        res.status(400).json('Bad request!!!')
     }
 })
 
@@ -36,8 +37,8 @@ router.get('/:id', authMiddleware, async (req,res) => {
     const id = req.params.id
 
     try {
-        const findBlog = await BlogModel.findById(id)
-        res.status(200).json(findBlog)
+        const findStatus = await StatusModel.findById(id)
+        res.status(200).json(findStatus)
     } catch (error) {
         console.log(error);
     }
@@ -47,11 +48,11 @@ router.get('/:id', authMiddleware, async (req,res) => {
 //* ======== UPDATE BY ID ========
 router.put('/:id', authMiddleware, async (req, res) => {
     const id = req.params.id
-    const newBlogData = req.body
+    const newStatusData = req.body
     try {
-        // find the blog by id 
-        const findBlog = await BlogModel.findByIdAndUpdate(id, newBlogData, {new:true})
-        res.status(202).json(findBlog)
+        // find the status by id 
+        const findStatus = await StatusModel.findByIdAndUpdate(id, newStatusData, {new:true})
+        res.status(202).json(findStatus)
     } catch (error) {
         console.log(error);
     }
@@ -62,7 +63,7 @@ router.delete('/:id', authMiddleware, async (req, res) => {
     const id = req.params.id
 
     try {
-       await BlogModel.findByIdAndDelete(id)
+       await StatusModel.findByIdAndDelete(id)
 
         res.status(200).json('deleted')
     } catch (error) {
