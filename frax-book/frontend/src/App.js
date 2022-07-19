@@ -12,12 +12,12 @@ function App() {
 
   return (
     <div className="container">
-    <h1>fraxbook Frontend</h1>
+    <h1>fraxbook</h1>
 
     <Switch>
       <Route exact path='/' render={routerProps => <Landing {...routerProps} setUser={setUser}/> } />
       <Route path='/home'  render={routerProps => <Home {...routerProps} user={user} setUser={setUser} />} />
-      <Route path='/about' component={About} />
+      {/* <Route path='/about' component={About} /> */}
       <Route path='/update/:id' component={EditStatus} />
     </Switch>
     </div>

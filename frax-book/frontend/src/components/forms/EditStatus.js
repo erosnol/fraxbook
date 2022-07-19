@@ -12,7 +12,7 @@ const EditStatus = (props) => {
 
   useEffect(() => {
     axios
-      .get(`http:///localhost:4002/status/${id}`, {
+      .get(`http:///localhost:4002/statuses/${id}`, {
         headers: {
           "x-auth-token": localStorage.getItem("userToken"),
         },

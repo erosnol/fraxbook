@@ -10,13 +10,13 @@ const NavBar = (props) => {
                     </Link>
                 </li>
                 <li className='nav-item'>
-                    <NavLink to='/About' className='nav-link'>
-                        About
+                    <NavLink to='/Profile' className='nav-link'>
+                        Profile
                     </NavLink>
                 </li>
                 <li className='nav-item'>
                     <NavLink to='/' className='nav-link'>
-                        Landing
+                        Sign out
                     </NavLink>
                 </li>
             </ul>
