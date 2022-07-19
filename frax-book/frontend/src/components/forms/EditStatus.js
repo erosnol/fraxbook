@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios';
-import { toBeInTheDocument } from '@testing-library/jest-dom/dist/matchers';
 
-const UpdateBlog = (props) => {
-  const [blog, setBlog] = useState(null)
+
+const EditStatus = (props) => {
+  const [status, setStatus] = useState(null)
   const { id } = useParams()
   const history = useHistory()
 
@@ -12,14 +12,14 @@ const UpdateBlog = (props) => {
 
   useEffect(() => {
     axios
-      .get(`http:///localhost:4001/blog/${id}`, {
+      .get(`http:///localhost:4002/status/${id}`, {
         headers: {
           "x-auth-token": localStorage.getItem("userToken"),
         },
       })
       .then((res) => {
         console.log(res.data)
-        setBlog(res.data)
+        setStatus(res.data)
       })
       .catch((err) => console.error(err));
   }, []);
@@ -28,7 +28,7 @@ const UpdateBlog = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.put(`http://localhost:4001/blogs/${id}`, blog, {
+    axios.put(`http://localhost:4002/statuses/${id}`, status, {
       headers: {
         'x-auth-token': localStorage.getItem("userToken")
       }
@@ -37,7 +37,7 @@ const UpdateBlog = (props) => {
 
   return (
     <div>
-      {blog && (
+      {status && (
         <form onSubmit={handleSubmit}>
           <label className='form-label' htmlFor="title">
             Title
@@ -46,9 +46,9 @@ const UpdateBlog = (props) => {
             type='text'
             id='title'
             name='title'
-            value={blog.title}
+            value={status.title}
             onChange={(e) =>
-              setBlog({ ...blog, [e.target.id]: e.target.value })
+              setStatus({ ...status, [e.target.id]: e.target.value })
             }
           />
 
@@ -62,9 +62,9 @@ const UpdateBlog = (props) => {
               type='text'
               id='details'
               name='details'
-              value={blog.details}
+              value={status.details}
               onChange={(e) =>
-                setBlog({ ...blog, [e.target.id]: e.target.value })
+                setStatus({ ...status, [e.target.id]: e.target.value })
               }
             />
           </div>
@@ -79,4 +79,4 @@ const UpdateBlog = (props) => {
     </div>
   )
 }
-export default UpdateBlog
+export default EditStatus

@@ -14,7 +14,7 @@ const LoginForm = (props) => {
         console.log(formData);
 
 
-        axios.post('http://localhost:4001/auth', formData)
+        axios.post('http://localhost:4002/auth', formData)
             .then((res) => {
                 console.log(res.data)
 

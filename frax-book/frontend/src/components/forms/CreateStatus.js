@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { useState } from 'react';
 
-const CreateBlog = (props) => {
-    const [blogData, setFormData] = useState({
+const CreateStatus = (props) => {
+    const [statusData, setFormData] = useState({
         title: '',
         details: ''
     })
@@ -10,11 +10,11 @@ const CreateBlog = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:4001/blog', blogData, {
+        axios.post('http://localhost:4002/status', statusData, {
             headers: {
                 'x-auth-token': localStorage.getItem("userToken")
             }
-        }).then(res => props.setBlogs([...props.blogs, res.data]))
+        }).then(res => props.setStatuses([...props.statuses, res.data]))
     }
 
     return (
@@ -29,23 +29,24 @@ const CreateBlog = (props) => {
                     type='text'
                     id='title'
                     name='title'
-                    value={blogData.title}
+                    value={statusData.title}
                     onChange={(e) =>
-                        setFormData({ ...blogData, [e.target.id]: e.target.value })}
+                        setFormData({ ...statusData, [e.target.id]: e.target.value })}
                 />
          
 
             <div className='mb-3'>
                 <label  className='form-label' htmlFor="details">
+                    Details
                 </label>
                 <input
                     className='form-control'
                     type='text'
                     id='details'
                     name='details'
-                    value={blogData.details}
+                    value={statusData.details}
                     onChange={(e) =>
-                        setFormData({ ...blogData, [e.target.id]: e.target.value })}
+                        setFormData({ ...statusData, [e.target.id]: e.target.value })}
                 />
             </div>
             <input type='submit' className='btn btn-success' />
@@ -53,4 +54,4 @@ const CreateBlog = (props) => {
 
     )
 }
-export default CreateBlog
+export default CreateStatus

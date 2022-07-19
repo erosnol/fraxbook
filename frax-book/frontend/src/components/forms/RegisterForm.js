@@ -15,7 +15,7 @@ const RegisterForm = (props) => {
         console.log(formData);
 
 
-        axios.post('http://localhost:4001/users', formData)
+        axios.post('http://localhost:4002/users', formData)
             .then(res => {
                 console.log(res.data)
 
@@ -35,31 +35,55 @@ const RegisterForm = (props) => {
             <form onSubmit={handleSubmit}>
 
                 <div className="mb-3">
-                    <label className="form-label" htmlFor="username">Username</label>
-                    <input className="form-control" type='text' id='username' name='username' value={formData.username}
-                        onChange={e => setFormData({ ...formData, [e.target.id]: e.target.value })}
+                    <label className="form-label" htmlFor="username">
+                        Username
+                    </label>
+                    <input
+                        className="form-control"
+                        type='text'
+                        id='username'
+                        name='username'
+                        value={formData.username}
+                        onChange={e =>
+                            setFormData({ ...formData, [e.target.id]: e.target.value })}
                     />
                 </div>
 
 
                 <div className="mb-3">
-                    <label className="form-label" htmlFor="email">Email</label>
-                    <input className="form-control"  type='text' id='email' name='email' value={formData.email}
-                        onChange={e => setFormData({ ...formData, [e.target.id]: e.target.value })}
+                    <label className="form-label" htmlFor="email">
+                        Email
+                    </label>
+                    <input
+                        className="form-control"
+                        type='text'
+                        id='email'
+                        name='email'
+                        value={formData.email}
+                        onChange={e =>
+                            setFormData({ ...formData, [e.target.id]: e.target.value })}
                     />
                 </div>
 
 
                 <div className="mb-3">
-                    <label className="form-label" htmlFor="password">Password</label>
-                    <input className="form-control"  type='password' id='password' name='password' value={formData.password}
-                        onChange={e => setFormData({ ...formData, [e.target.id]: e.target.value })}
+                    <label className="form-label" htmlFor="password">
+                        Password
+                    </label>
+                    <input
+                        className="form-control"
+                        type='password'
+                        id='password'
+                        name='password'
+                        value={formData.password}
+                        onChange={e =>
+                            setFormData({ ...formData, [e.target.id]: e.target.value })}
                     />
                 </div>
 
 
 
-                <input type='submit' className="btn btn-primary"/>
+                <input type='submit' className="btn btn-primary" />
             </form>
         </div>
     )
