@@ -10,7 +10,7 @@ const CreateStatus = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:4002/statuses', statusData, {
+        axios.post('http://localhost:4002/status', statusData, {
             headers: {
                 'x-auth-token': localStorage.getItem("userToken")
             }
@@ -18,9 +18,10 @@ const CreateStatus = (props) => {
     }
 
     return (
+        <div>
+            <h3>Create Status</h3>
+            <form onSubmit={handleSubmit}>
 
-        <form onSubmit={handleSubmit}>
-           
                 <label className='form-label' htmlFor="title">
                     Title
                 </label>
@@ -33,25 +34,25 @@ const CreateStatus = (props) => {
                     onChange={(e) =>
                         setFormData({ ...statusData, [e.target.id]: e.target.value })}
                 />
-         
 
-            <div className='mb-3'>
-                <label  className='form-label' htmlFor="details">
-                    Details
-                </label>
-                <input
-                    className='form-control'
-                    type='text'
-                    id='details'
-                    name='details'
-                    value={statusData.details}
-                    onChange={(e) =>
-                        setFormData({ ...statusData, [e.target.id]: e.target.value })}
-                />
-            </div>
-            <input type='submit' className='btn btn-success' />
-        </form>
 
+                <div className='mb-3'>
+                    <label className='form-label' htmlFor="details">
+                        Details
+                    </label>
+                    <input
+                        className='form-control'
+                        type='text'
+                        id='details'
+                        name='details'
+                        value={statusData.details}
+                        onChange={(e) =>
+                            setFormData({ ...statusData, [e.target.id]: e.target.value })}
+                    />
+                </div>
+                <input type='submit' className='btn btn-success' />
+            </form>
+        </div>
     )
 }
 export default CreateStatus

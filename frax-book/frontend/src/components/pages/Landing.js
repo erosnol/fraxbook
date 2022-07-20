@@ -2,15 +2,13 @@ import LoginForm from "../forms/LoginForm"
 import RegisterForm from "../forms/RegisterForm"
 import { useState } from "react"
 
-
 const Landing = (props) => {
     const [hasAccount, setHasAccount] = useState(false)
     const { setUser } = props
 
     return (
         <div>
-            <h1>Landing Page</h1>
-
+            <h1> Landing</h1>
             {hasAccount === false ? (
                 <div>
                     <RegisterForm setUser={setUser} />

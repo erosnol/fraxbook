@@ -10,7 +10,7 @@ const Home = (props) => {
     const history = useHistory()
 
     useEffect(() => {
-        axios.get('http://localhost:4002/statuses', {
+        axios.get('http://localhost:4002/status', {
             headers: {
                 'x-auth-token': localStorage.getItem("userToken")
             }
@@ -23,7 +23,7 @@ const Home = (props) => {
 
     const handleDelete = (status) => {
         axios
-            .delete(`http://localhost:4002/statuses/${status._id}`, {
+            .delete(`http://localhost:4002/status/${status._id}`, {
                 headers: {
                     "x-auth-token": localStorage.getItem("userToken"),
                 },
