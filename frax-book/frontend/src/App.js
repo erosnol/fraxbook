@@ -8,11 +8,8 @@ import EditStatus from './components/forms/EditStatus';
 
 
 import CoinDetailPage from "./cointracker/pages/CoinDetailPage";
-import CoinSummaryPage from "./cointracker/pages/CoinSummaryPage";
 import { WatchListContextProvider } from "./cointracker/context/watchListContext"
-import CreateStatus from "./components/forms/CreateStatus";
-import NavBar from "./components/layout/NavBar";
-import Header from "./cointracker/components/Header";
+
 
 function App() {
   const [user, setUser] = useState(null)
@@ -23,20 +20,10 @@ function App() {
 
       <WatchListContextProvider>
         <Switch>
-
-
-          <Route exact path='/' render={routerProps => <Landing {...routerProps} setUser={setUser} />} >         
-          </Route>
-          <Route path='/home' render={routerProps => <Home {...routerProps} user={user} setUser={setUser} />} >
-            <Header />
-            <NavBar />
-            <CoinSummaryPage />
-            <CoinDetailPage />
-            <CreateStatus />
-          </Route>
-
+          <Route exact path='/' render={routerProps => <Landing {...routerProps} setUser={setUser} />} />
+          <Route path='/home' render={routerProps => <Home {...routerProps} user={user} setUser={setUser} />} />
+          <Route path="/coins/:id" component={CoinDetailPage} />
           <Route path='/update/:id' component={EditStatus} />
-
         </Switch>
       </WatchListContextProvider>
     </div>

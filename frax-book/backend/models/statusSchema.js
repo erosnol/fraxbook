@@ -7,7 +7,7 @@ const statusSchema = mongoose.Schema({
 
     title: {
         type: String,
-        required: true
+        required: false
     },
 
     details: {
@@ -16,7 +16,7 @@ const statusSchema = mongoose.Schema({
     },
 
     created_at: {
-        type: Date,
+        type: String,
         default: Date.now()
     },
 

@@ -33,7 +33,7 @@ const LoginForm = (props) => {
         <div>
             <form onSubmit={handleSubmit}>
 
-                <label htmlFor="email" className="form-label">
+                <label htmlFor="email" className="form-label text-light">
                     Email
                 </label>
                 <input
@@ -45,7 +45,7 @@ const LoginForm = (props) => {
                         setFormData({ ...formData, [e.target.id]: e.target.value })}
                 />
 
-                <label htmlFor="password" className="form-label">
+                <label htmlFor="password" className="form-label text-light">
                     Password
                 </label>
                 <input
@@ -59,7 +59,7 @@ const LoginForm = (props) => {
                 />
 
                 <div className="mb-3">
-                    <input type='submit' className="btn btn-info" />
+                    <input type='submit' className="btn btn-primary btn-lg float-end " />
                 </div>
 
             </form>

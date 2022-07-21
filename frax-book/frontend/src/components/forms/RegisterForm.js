@@ -35,7 +35,7 @@ const RegisterForm = (props) => {
             <form onSubmit={handleSubmit}>
 
                 <div className="mb-3">
-                    <label className="form-label" htmlFor="username">
+                    <label className="form-label text-light" htmlFor="username">
                         Username
                     </label>
                     <input
@@ -51,7 +51,7 @@ const RegisterForm = (props) => {
 
 
                 <div className="mb-3">
-                    <label className="form-label" htmlFor="email">
+                    <label className="form-label text-light col-sm-2 col-form-label" htmlFor="email">
                         Email
                     </label>
                     <input
@@ -67,7 +67,7 @@ const RegisterForm = (props) => {
 
 
                 <div className="mb-3">
-                    <label className="form-label" htmlFor="password">
+                    <label className="form-label text-light" htmlFor="password">
                         Password
                     </label>
                     <input
@@ -83,7 +83,7 @@ const RegisterForm = (props) => {
 
 
 
-                <input type='submit' className="btn btn-primary" />
+                <input type='submit' className="btn btn-primary btn-lg float-end" />
             </form>
         </div>
     )

@@ -1,7 +1,7 @@
 const express = require("express");
 const authMiddleware = require("../middleware/authMiddleware");
 const StatusModel = require('../models/statusSchema')
-
+const moment = require('moment')
 
 //* ======== Create Router ========
 const router = express.Router()
@@ -21,6 +21,8 @@ router.get('/', authMiddleware, async (req, res) => {
 router.post('/', authMiddleware, async (req, res) => {
     const statusData = req.body
     statusData.user = req.user.id
+    statusData.created_by=req.user.username
+    statusData.created_at=moment().format("MMM Do YY");
     console.log(statusData);
     try {
         const status = await StatusModel.create(statusData) // creates the status in DB

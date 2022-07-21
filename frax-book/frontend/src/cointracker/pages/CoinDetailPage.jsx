@@ -3,6 +3,10 @@ import { useParams } from "react-router-dom";
 import HistoryChart from "../components/HistoryChart";
 import CoinData from "../components/CoinData";
 import coinGecko from "../apis/coinGecko";
+import Particles from '../../components/Particles'
+import Header from "../components/Header";
+import CreateStatus from "../../components/forms/CreateStatus";
+
 
 const CoinDetailPage = () => {
   const { id } = useParams();
@@ -67,8 +71,12 @@ const CoinDetailPage = () => {
     }
     return (
       <div className="coinlist">
+        <Header />
         <HistoryChart data={coinData} />
         <CoinData data={coinData.detail} />
+        <CreateStatus />
+        <Particles />
+        
       </div>
     );
   };

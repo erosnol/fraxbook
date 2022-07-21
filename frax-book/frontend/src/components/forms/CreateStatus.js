@@ -4,7 +4,9 @@ import { useState } from 'react';
 const CreateStatus = (props) => {
     const [statusData, setFormData] = useState({
         title: '',
-        details: ''
+        details: '',
+        created_by: '',
+        created_at:''
     })
 
 
@@ -19,10 +21,10 @@ const CreateStatus = (props) => {
 
     return (
         <div>
-            <h3>Create Status</h3>
+            <h4 className='text-light'>Feed</h4>
             <form onSubmit={handleSubmit}>
 
-                <label className='form-label' htmlFor="title">
+                {/* <label className='form-label text-light' htmlFor="title">
                     Title
                 </label>
                 <input
@@ -33,24 +35,25 @@ const CreateStatus = (props) => {
                     value={statusData.title}
                     onChange={(e) =>
                         setFormData({ ...statusData, [e.target.id]: e.target.value })}
-                />
+                /> */}
 
 
                 <div className='mb-3'>
-                    <label className='form-label' htmlFor="details">
-                        Details
+                    <label className='form-label text-light' htmlFor="details">
+                    Details
                     </label>
-                    <input
+                    <input 
+                       user={props.user}
                         className='form-control'
                         type='text'
                         id='details'
                         name='details'
-                        value={statusData.details}
+                        value={statusData.details} 
                         onChange={(e) =>
                             setFormData({ ...statusData, [e.target.id]: e.target.value })}
                     />
                 </div>
-                <input type='submit' className='btn btn-success' />
+                <input type='submit' value='Update Status' className='btn btn-secondary btn-lg float-end' />
             </form>
         </div>
     )

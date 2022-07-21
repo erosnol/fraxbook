@@ -5,7 +5,7 @@ const helmet = require('helmet')
 const cors = require('cors')
 
 const mongoConfig = require('./config/mongoConfig')
-const statusesRouter = require('./routes/statusesRouter')
+const statusRouter = require('./routes/statusRouter')
 const usersRouter = require('./routes/usersRouter')
 const authRouter = require('./routes/authRouter')
 
@@ -20,7 +20,7 @@ app.use(helmet())
 app.use(cors())
 
 //* Routers
-app.use('/statuses', statusesRouter)
+app.use('/status', statusRouter)
 app.use('/users', usersRouter)
 app.use('/auth', authRouter)
 

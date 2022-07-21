@@ -72,7 +72,7 @@ const EditStatus = (props) => {
           <input
             type='submit'
             className='btn btn-success'
-            value="Update todo"
+            value="Edit Status"
           />
         </form>
       )}

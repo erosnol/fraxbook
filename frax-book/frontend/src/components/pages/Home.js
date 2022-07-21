@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
-import NavBar from '../layout/NavBar'
 import axios from 'axios'
 import CreateStatus from '../forms/CreateStatus'
 import { useHistory } from 'react-router-dom'
+import Header from '../../cointracker/components/Header'
+import CoinSummaryPage from '../../cointracker/pages/CoinSummaryPage'
+import ParticlesComponent from '../Particles'
+import NavBar from '../layout/NavBar'
 
 
 const Home = (props) => {
@@ -41,10 +44,17 @@ const Home = (props) => {
 
     return (
         <div>
-            <NavBar user={props.user} />
-            <h1>Home Page</h1>
+            <Header />
+            <NavBar />
 
-            <CreateStatus setStatuses={setStatuses} statuses={statuses} />
+            <CoinSummaryPage />
+
+            {statuses && <CreateStatus user={props.user} setStatuses={setStatuses} statuses={statuses} />}
+            
+
+            <ParticlesComponent />
+
+
 
             {statuses &&
                 statuses.map(status => (
