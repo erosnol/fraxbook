@@ -12,7 +12,7 @@ const EditStatus = (props) => {
 
   useEffect(() => {
     axios
-      .get(`http:///localhost:4002/status/${id}`, {
+      .get(`https://fraxbookbackend.herokuapp.com/status/${id}`, {
         headers: {
           "x-auth-token": localStorage.getItem("userToken"),
         },
@@ -28,7 +28,7 @@ const EditStatus = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.put(`http://localhost:4002/status/${id}`, status, {
+    axios.put(`https://fraxbookbackend.herokuapp.com/status/${id}`, status, {
       headers: {
         'x-auth-token': localStorage.getItem("userToken")
       }

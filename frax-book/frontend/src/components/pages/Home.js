@@ -13,7 +13,7 @@ const Home = (props) => {
     const history = useHistory()
 
     useEffect(() => {
-        axios.get('http://localhost:4002/status', {
+        axios.get('https://fraxbookbackend.herokuapp.com/status', {
             headers: {
                 'x-auth-token': localStorage.getItem("userToken")
             }
@@ -26,7 +26,7 @@ const Home = (props) => {
 
     const handleDelete = (status) => {
         axios
-            .delete(`http://localhost:4002/status/${status._id}`, {
+            .delete(`https://fraxbookbackend.herokuapp.com/status/${status._id}`, {
                 headers: {
                     "x-auth-token": localStorage.getItem("userToken"),
                 },

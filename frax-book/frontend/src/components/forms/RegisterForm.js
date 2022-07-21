@@ -15,7 +15,7 @@ const RegisterForm = (props) => {
         console.log(formData);
 
 
-        axios.post('http://localhost:4002/users', formData)
+        axios.post('https://fraxbookbackend.herokuapp.com/users', formData)
             .then(res => {
                 console.log(res.data)
 

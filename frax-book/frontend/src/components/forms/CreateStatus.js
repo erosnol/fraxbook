@@ -12,7 +12,7 @@ const CreateStatus = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:4002/status', statusData, {
+        axios.post('https://fraxbookbackend.herokuapp.com/status', statusData, {
             headers: {
                 'x-auth-token': localStorage.getItem("userToken")
             }
