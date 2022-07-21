@@ -38,9 +38,9 @@ const CreateStatus = (props) => {
                 /> */}
 
 
-                <div className='mb-3'>
-                    <label className='form-label text-light' htmlFor="details">
-                    Details
+                <div class='card' className='mb-3'>
+                    <label className='form-label text-dark' htmlFor="details">
+                    What's on your mind..?
                     </label>
                     <input 
                        user={props.user}

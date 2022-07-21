@@ -52,7 +52,7 @@ const Home = (props) => {
             {statuses && <CreateStatus user={props.user} setStatuses={setStatuses} statuses={statuses} />}
             
 
-            <ParticlesComponent />
+            {/* <ParticlesComponent /> */}
 
 
 

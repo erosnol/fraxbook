@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 const NavBar = (props) => {
     return (
-        <nav>
+        <nav class="nav justify-content-end">
             <ul className='nav'>
                 <li className='nav-item'>
                     <Link to='/Home' className='nav-link'>
