@@ -48,6 +48,7 @@ This is a Facebook clone, with the Frax.Finance community in mind. Frax is the f
 
 - React
 - Bootstrap@5
+- Particles — https://particles.js.org/
 
 #### Back-end
 
