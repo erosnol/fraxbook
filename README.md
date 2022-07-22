@@ -48,11 +48,12 @@ https://fraxbook.netlify.app
 ### API Reference 
 - CoinGecko Crypto coin tracker — https://www.coingecko.com/en/api/documentation
 - Youtube tutorial and repo used to build coin API https://github.com/Sanjeev-Thiyagarajan/cryptocurrency-tracker
-| GET coins              | 
-| ------------------ | 
-| /coins​/markets |
-| /coins/list |
-| /coins/{id}/market_chart |
+
+| GET coins                     | 
+| ------------------------------|             
+| /coins​/markets                |
+| /coins/list                   |
+| /coins/{id}/market_chart      |
 | /coins/{id}/market_chart/range|
 
 ### Approach Taken
