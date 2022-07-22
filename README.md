@@ -61,7 +61,7 @@ This is a Facebook clone, with the Frax.Finance community in mind. Frax is the f
 
 ### Dependencies
 
-| Dependency         | Version |
+|                    | Version |
 | ------------------ | ------- |
 | bcrypt             | 5.0.1   |
 | cors               | 2.8.5   |
