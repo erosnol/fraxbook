@@ -44,13 +44,13 @@ This is a Facebook clone, with the Frax.Finance community in mind. Frax is the f
 
 ## Technologies Used
 
-#### Front-end
+### Front-end
 
 - React
 - Bootstrap@5
 - Particles — https://particles.js.org/
 
-#### Back-end
+### Back-end
 
 - Node.js
 - Express
