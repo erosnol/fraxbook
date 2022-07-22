@@ -4,12 +4,12 @@ This is a simple social media app. Users can make, read, update, and delete a st
 
 Home Page layout 
 
-![WireFrame Homepage](./fraxbook/frax-book/FraxBookHome.png)
+![WireFrame Homepage](https://github.com/erosnol/fraxbook/tree/main/frax-book/frontend/FraxBookHome.png)
 
 
 Flow Chart for pages and components. (todos = status/statuses is this case)
 
-![Flow chart](./fraxbook/frax-book/components-tree.png)
+![Flow chart](https://github.com/erosnol/fraxbook/tree/main/frax-book/frontend/components-tree.png)
 
 ### Demo
 
