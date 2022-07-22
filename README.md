@@ -4,12 +4,12 @@ This is a simple social media app. Users can make, read, update, and delete a st
 
 Home Page layout 
 
-![Plan for the page](./fraxbook/frax-book/img/FraxBookLanding.png)
+![Plan for the page](./fraxbook/frax-book/FraxBookLanding.png)
 
 
 Flow Chart for pages and components. (todos = status/statuses is this case)
 
-![Flow chart](./fraxbook/frax-book/img/components-tree.png)
+![Flow chart](./fraxbook/frax-book/components-tree.png)
 
 ### Demo
 
