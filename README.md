@@ -1,4 +1,4 @@
-## Fraxbook 
+# Fraxbook 
 
 This is a simple social media app. Users can make, read, update, and delete a status.
 
