@@ -11,11 +11,38 @@ Flow Chart for pages and components. (todos = status/statuses is this case)
 
 ![Flow chart](./fraxbook/frax-book/img/components-tree.png)
 
-## Demo
+### Demo
 
 https://fraxbook.netlify.app
 
-### Technologies Used
+## Approach
+
+First, coded a coin tracker API in separate repo and made sure it worked using AXIOS. Then, created a new MONGODB database and recreated a backend for the new front-end React app. Following previous repos as guidance, only changing the names and adding and connecting the API.
+
+
+### Story
+
+This is a Facebook clone, with the Frax.Finance community in mind. Frax is the first partially backed by collateral and partially algorithmic stable coin. More information on https://frax.finance/
+
+
+### Unsolved Problems
+
+- Bootstrap5 styling — had trouble learning and figuring out a new styling language in such small time period. 
+- AXIOS API GET errors after netifly.app launch — got errors after website launched on netifly and editing the GET URL. Full CRUD was working correctly when before, on localhost. Still debugging.
+- Styling was the only big issue, unfortuanely 
+
+
+### Future development 
+
+- Fix axios GET errors 
+- Restyle components
+- Add comment & like feautures to status component
+- Add a Profile page that renders user information 
+- Implement Frax analytics APIs or an introduction course to Frax.Finace
+- Lastly, gather an audience 
+
+
+## Technologies Used
 
 #### Front-end
 
@@ -55,32 +82,4 @@ https://fraxbook.netlify.app
 | /coins/list                   |
 | /coins/{id}/market_chart      |
 | /coins/{id}/market_chart/range|
-
-### Approach Taken
-
-First, coded a coin tracker API in separate repo and made sure it worked using AXIOS. Then, created a new MONGODB database and recreated a backend for the new front-end React app. Following previous repos as guidance, only changing the names and adding and connecting the API.
-
-
-### User Story
-
-This is a Facebook clone, with the Frax.Finance community in mind. Frax is the first partially backed by collateral and partially algorithmic stable coin. More information on https://frax.finance/
-
-
-### Unsolved Problems
-
-- Bootstrap5 styling — had trouble learning and figuring out a new styling language in such small time period. 
-- AXIOS API GET errors after netifly.app launch — got errors after website launched on netifly and editing the GET URL. Full CRUD was working correctly when before, on localhost. Still debugging.
-- Styling was the only big issue, unfortuanely 
-
-
-
-### Future development 
-
-- Fix axios GET errors 
-- Restyle components
-- Add comment & like feautures to status component
-- Add a Profile page that renders user information 
-- Implement Frax analytics APIs or an introduction course to Frax.Finace
-- Lastly, gather an audience 
-
 
