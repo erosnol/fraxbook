@@ -75,11 +75,11 @@ This is a Facebook clone, with the Frax.Finance community in mind. Frax is the f
 
 ### API Reference 
 - CoinGecko Crypto coin tracker — https://www.coingecko.com/en/api/documentation
-- Youtube tutorial and repo used to build coin API https://github.com/Sanjeev-Thiyagarajan/cryptocurrency-tracker
+- Youtube tutorial and repo used to build coin API https://github.com/Sanjeev-Thiyagarajan/cryptocurrency-tracker https://www.youtube.com/watch?v=3m-3qnEXIUk&t=8376s
 
 | GET coins                     | 
 | ------------------------------|             
-| /coins​/markets                |
+| /coins/markets                |
 | /coins/list                   |
 | /coins/{id}/market_chart      |
 | /coins/{id}/market_chart/range|
